@@ -1,0 +1,30 @@
+
+    
+   {% extends "base.html" %}
+   {% block content %}
+  
+    <h1>my List</h1>
+
+    <a class="btn btn-primary" href="{% url  'create' %}" role="button">Create</a>
+
+    <br><br>
+
+    <ul class="list-group">
+      {% for object in object_list %}
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="#" role="button">{{object.name}}</a>
+      </li>
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{% url  'update' object.id %}" role="button">Update</a>
+      </li>
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{% url  'delete' object.id %}" role="button">Delete</a>
+      </li>
+      <li class="list-group-item">
+        <a class="btn btn-primary" href="{% url  'detail' object.id %}" role="button">Detail</a>
+      </li>
+      ----------------------------------------------------
+       {% endfor %}
+    </ul>
+   
+{% endblock %}

@@ -1,0 +1,17 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Create</h5>
+    <form method="post">
+      {% csrf_token %}
+      {{form.as_p}} {# form we created in forms.py from views#}
+      <input type="submit" class="btn btn-primary">
+    </form>
+    
+  </div>
+</div>
+{% endblock %}
